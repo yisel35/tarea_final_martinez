@@ -1,19 +1,25 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import Navbar from "./components/Navbar";
-import ItemListContainer from "./components/ItemListContainer";
-import Cart from "./components/Cart";
+import { Route, Routes } from 'react-router-dom'
+import { Header, ItemListContainer } from './Components'
+import ItemDetailContainer from './pages/ItemDetailContainer'
+import Cart from './pages/Cart'
+import Checkout from './pages/Checkout'
+import About from './pages/About'
 
 function App() {
   return (
-    <Router>
-      <Navbar />
+    <>
+      <Header />
       <Routes>
-        <Route path="/" element={<ItemListContainer greeting="¡Bienvenido a mi-tienda!" />} />
-        <Route path="/productos" element={<ItemListContainer greeting="Nuestros productos" />} />
-        <Route path="/carrito" element={<Cart />} />
+        <Route path='/' element={<ItemListContainer />} />
+        <Route path='/category/:category' element={<ItemListContainer />} />
+        <Route path='/item/:id' element={<ItemDetailContainer />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/cart' element={<Cart />} />
+        <Route path='/checkout' element={<Checkout />} />
+        <Route path='*' element={<h1>Error 404 - Página no encontrada</h1>} />
       </Routes>
-    </Router>
-  );
+    </>
+  )
 }
 
-export default App;
+export default App

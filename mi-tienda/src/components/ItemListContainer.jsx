@@ -1,10 +1,10 @@
-function ItemListContainer({ greeting }) {
+function ItemListContainer({ greeting = "Bienvenido a nuestra tienda de ropa" }) {
   return (
-    <div style={{ padding: "2rem" }}>
+    <div>
       <h2>{greeting}</h2>
-      <p>Aquí irán los productos disponibles.</p>
+      <p>Aquí verás nuestros productos.</p>
     </div>
-  );
+  )
 }
 
-export default ItemListContainer;
+export default ItemListContainer
