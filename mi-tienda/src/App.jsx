@@ -1,9 +1,10 @@
-import { Route, Routes } from 'react-router-dom'
-import { Header, ItemListContainer } from './Components'
-import ItemDetailContainer from './pages/ItemDetailContainer'
-import Cart from './pages/Cart'
-import Checkout from './pages/Checkout'
-import About from './pages/About'
+import { Route, Routes } from 'react-router-dom';
+import Header from './components/Header';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './pages/ItemDetailContainer';
+import Cart from './pages/Cart';
+import Checkout from './pages/Checkout';
+import About from './pages/About';
 
 function App() {
   return (
@@ -19,7 +20,7 @@ function App() {
         <Route path='*' element={<h1>Error 404 - Página no encontrada</h1>} />
       </Routes>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
